@@ -12,6 +12,15 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/build'),
+    environment: {
+      arrowFunction: false,
+      bigIntLiteral: false,
+      const: false,
+      destructuring: false,
+      dynamicImport: false,
+      forOf: false,
+      module: false,
+   },
   },
   module: {
     rules: [
@@ -34,4 +43,9 @@ module.exports = {
     contentBase: './',
     hot: true,
   },
+  resolve: {
+    alias: {
+      'react-native$': 'react-native-web',
+    },
+  },  
 }
