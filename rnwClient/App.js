@@ -1,18 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, Dimensions } from 'react-native';
 
-const Scent = ({ data }) => (
-  <View style={styles.item}>
-    <Image
-      style={styles.image}
-      resizeMode={'cover'}
-      source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }}
-    />
-    <Text style={styles.title}>
-      {data.name}
-    </Text>
-  </View>
-);
+import CardCustom from './src/Components/Card';
+
+import ScentScreens from './src/Screens/ScentsScrees';
 
 const App = () => {
 
@@ -28,17 +19,20 @@ const App = () => {
   }, []);
 
   const renderItem = ({ item }) => (
-    <Scent data={item} />
+    <ScentScreens data={item} />
+    //<CardCustom data={item} />
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item, index) => index.toString()}
-      />
-    </SafeAreaView>
+    <CardCustom>
+      <SafeAreaView style={styles.container}>         
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </SafeAreaView>
+    </CardCustom>    
   );
 }
 
