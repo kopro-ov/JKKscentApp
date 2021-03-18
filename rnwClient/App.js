@@ -1,27 +1,68 @@
-import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, Dimensions } from 'react-native';
 
-function App() {
+const Scent = ({ data }) => (
+  <View style={styles.item}>
+    <Image
+      style={styles.image}
+      resizeMode={'cover'}
+      source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }}
+    />
+    <Text style={styles.title}>
+      {data.name}
+    </Text>
+  </View>
+);
+
+const App = () => {
+
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://192.168.0.167:1202/scent')
+      .then((response) => response.json())
+      .then((json) => { setData(json) })
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const renderItem = ({ item }) => (
+    <Scent data={item} />
+  );
+
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        height: 100,
-        padding: 20
-      }}
-    >
-      <View style={{ backgroundColor: "blue", flex: 0.3 }} />
-      <View style={{ backgroundColor: "red", flex: 0.5 }} />
-      <Text>Hello World!</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item, index) => index.toString()}
+      />
+    </SafeAreaView>
   );
 }
+
+const win = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems:'center'
+    marginTop: StatusBar.currentHeight || 0,
   },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 12,
+  },
+  image: {
+    flex: 1,
+    alignSelf: 'stretch',
+    width: '100%',
+    height: 200,
+  }  
 });
 
 export default App;
