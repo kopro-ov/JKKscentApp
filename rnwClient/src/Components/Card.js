@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { View, Image, StyleSheet, ScrollView } from 'react-native';
-import { Avatar, Button, Card, Title, Dialog, Paragraph } from 'react-native-paper';
+import { View, Image, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { Button, Card, Title, Dialog, Paragraph } from 'react-native-paper';
 
-import DialogCustom from './Dialog';
+import DetailModal from './Modal/DetailModal';
+
+const renderItem = () => {
+    <DetailModal />
+}
 
 const CardCustom = ({ data }) => {
-
-    const detailMore = () => (
-        <DialogCustom />
-    );
-
     return (        
         <Card>
             <Card.Content style={{backgroundColor : '#B0C4DE' }}>
@@ -21,7 +20,7 @@ const CardCustom = ({ data }) => {
             </Card.Content>
             <Card.Cover source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }} />
             <Card.Actions>
-                <Button onPress={ () => detailMore() }>More</Button>
+                <Button onPress={() => renderItem()}>More</Button>
             </Card.Actions>
         </Card>        
     );
