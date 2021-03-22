@@ -1,55 +1,50 @@
-import React from 'react';
-import { Image, StyleSheet, ScrollView } from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import React, { useState } from 'react';
+import { View, Image, StyleSheet, ScrollView } from 'react-native';
+import { Avatar, Button, Card, Title, Dialog, Paragraph } from 'react-native-paper';
+
+import DialogCustom from './Dialog';
 
 const CardCustom = ({ data }) => {
-    return (
-        <>
-            <Card>
-                <Card.Content>
-                    <Title>Card title</Title>
-                    <Paragraph>Card content</Paragraph>
-                </Card.Content>
-                <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-                <Card.Actions>
-                    <Button>Cancel</Button>
-                    <Button>Ok</Button>
-                </Card.Actions>
-            </Card>
 
-            <Card>
-                <Card.Content>
-                    <Title>Card title</Title>
-                    <Paragraph>Card content</Paragraph>
-                </Card.Content>
-                <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-                <Card.Actions>
-                    <Button>Cancel</Button>
-                    <Button>Ok</Button>
-                </Card.Actions>
-            </Card>
+    const detailMore = () => (
+        <DialogCustom />
+    );
 
-            <Card>
-                <Card.Content>
-                    <Title>Card title</Title>
-                    <Paragraph>Card content</Paragraph>
-                </Card.Content>
-                <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-                <Card.Actions>
-                    <Button>Cancel</Button>
-                    <Button>Ok</Button>
-                </Card.Actions>
-            </Card>
-        </>
+    return (        
+        <Card>
+            <Card.Content style={{backgroundColor : '#B0C4DE' }}>
+                <Title>{data.name}</Title>
+                <View style={styles.line}>
+                    <Paragraph>{data.categories}</Paragraph>
+                    <Paragraph >{data.regDt}</Paragraph>
+                </View>                
+            </Card.Content>
+            <Card.Cover source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }} />
+            <Card.Actions>
+                <Button onPress={ () => detailMore() }>More</Button>
+            </Card.Actions>
+        </Card>        
     );
 };
 
 const styles = StyleSheet.create({
+    view: {
+        flex: 1,
+        flexDirection : 'column',
+    },    
     card : {
-        width: '90%',
         flex : 1,
         flexDirection: 'column', // row
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        padding : 1
+    },
+    line : {
+        width : '100%',
+        flexDirection : 'row',
+        alignItems : 'center',
+        justifyContent : 'space-between',
+        borderBottomWidth:0.5,
+        padding: 5,
     }
 });
 

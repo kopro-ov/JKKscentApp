@@ -1,12 +1,21 @@
-import React, {useState, useEffect, Fragment} from 'react';
-import { SafeAreaView, ScrollView, FlatList, StyleSheet, Text, StatusBar, Image, Dimensions } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, Dimensions } from 'react-native';
 
-import AppbarHead from './Components/AppHead';
-import AppbarBottom from './Components/AppbarBottom';
 import CardCustom from './Components/Card';
-import ChipCustom from './Components/Chip';
+import AppbarHead from './Components/AppHead';
 
-import ScentScreens from './Screens/ScentsScrees';
+const Scent = ({ data }) => (
+  <View style={styles.item}>
+    <Image
+      style={styles.image}
+      resizeMode={'cover'}
+      source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }}
+    />
+    <Text style={styles.title}>
+      {data.name}
+    </Text>
+  </View>
+);
 
 const App = () => {
 
@@ -22,38 +31,28 @@ const App = () => {
   }, []);
 
   const renderItem = ({ item }) => (
-    <ScentScreens data={item} />
-    //<CardCustom data={item} />
+    //<Scent data={item} />
+    <CardCustom data={item} />
   );
 
   return (
-     <Fragment>
-        <AppbarHead />
-        <ChipCustom />
-        <SafeAreaView style={styles.container}>
-            <CardCustom />            
-            {/**
-             * 
-             *        
-                    <FlatList
-                    data={data}
-                    renderItem={renderItem}
-                    keyExtractor={(item, index) => index.toString()}
-                    />
-            
-            * 
-            */}
-        </SafeAreaView>
-        <AppbarBottom />
-     </Fragment>     
+    <>
+      <AppbarHead />
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </SafeAreaView>
+    </>    
   );
 }
 
 const win = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    flex: 1,    
   },
   item: {
     backgroundColor: '#f9c2ff',

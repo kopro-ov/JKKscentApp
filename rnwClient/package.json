@@ -17,6 +17,7 @@
     "@material-ui/styles": "4.11.3",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/bottom-tabs": "5.11.8",
+    "@react-navigation/drawer": "5.12.4",
     "@react-navigation/native": "5.9.3",
     "galio-framework": "0.7.1",
     "react": "17.0.1",
@@ -27,6 +28,7 @@
     "react-native-reanimated": "2.0.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "2.18.1",
+    "react-native-simple-modal": "9.0.1",
     "react-native-vector-icons": "8.1.0",
     "react-native-web": "^0.15.0"
   },
