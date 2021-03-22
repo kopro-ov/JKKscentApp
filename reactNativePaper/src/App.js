@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, Dimensions } from 'react-native';
-import { Button } from 'react-native-paper';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, Dimensions } from 'react-native';
+
+import CardCustom from './Components/Card';
+import AppbarHead from './Components/AppHead';
 
 const Scent = ({ data }) => (
   <View style={styles.item}>
@@ -8,7 +10,7 @@ const Scent = ({ data }) => (
       style={styles.image}
       resizeMode={'cover'}
       source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }}
-    /> 
+    />
     <Text style={styles.title}>
       {data.name}
     </Text>
@@ -29,28 +31,28 @@ const App = () => {
   }, []);
 
   const renderItem = ({ item }) => (
-    <Scent data={item} />
+    //<Scent data={item} />
+    <CardCustom data={item} />
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-        Press me
-      </Button>      
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item, index) => index.toString()}
-      />
-    </SafeAreaView>
+    <>
+      <AppbarHead />
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </SafeAreaView>
+    </>    
   );
 }
 
 const win = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    flex: 1,    
   },
   item: {
     backgroundColor: '#f9c2ff',
