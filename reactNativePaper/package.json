@@ -2,6 +2,7 @@
   "name": "reactNativePaper",
   "version": "0.0.1",
   "private": true,
+  "homepage": ".",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -9,7 +10,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "lint": "eslint .",
-    "web": "webpack-dev-server --open"
+    "web": "webpack-dev-server --open",
+    "devtools": "react-devtools"
   },
   "dependencies": {
     "eslint-config-airbnb": "^18.2.1",
@@ -71,6 +73,5 @@
     "useTabs": false,
     "tabWidth": 2,
     "bracketSpacing": true
-  },
-  "homepage": "./"
+  }
 }

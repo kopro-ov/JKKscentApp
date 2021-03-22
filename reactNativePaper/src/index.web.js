@@ -2,8 +2,8 @@ import * as React from 'react';
 import { AppRegistry } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import iconFont from 'react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf';
-import { name as appName } from './app.json';
 import App from './App';
+import { name as appName } from './app.json';
 
 export default function Main() {
   return (
