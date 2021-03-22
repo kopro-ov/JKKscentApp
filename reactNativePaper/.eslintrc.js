@@ -1,12 +1,24 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
-  rules: {
-    'prettier/prettier': [
-        'error',
-        {
-            endOfLine: 'auto',
-        },
-    ],
+  env: {
+    browser: true,
+    es6: true,
   },
-};
+  //extends: 'airbnb', // 대표 컨벤션 eslint airbnb
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: ['react'],
+  rules: {
+    'react/prefer-stateless-function': 0,
+    'react/jsx-filename-extension': 0,
+    'react/jsx-one-expression-per-line': 0,
+  },
+}

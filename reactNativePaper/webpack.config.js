@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
 
   // Path to the entry file, change it according to the path you have
-  entry: path.join(__dirname, 'index.web.js'),
+  entry: path.join(__dirname, './src/index.web.js'),
 
   // Path for the output files
   output: {

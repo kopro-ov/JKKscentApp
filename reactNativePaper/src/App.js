@@ -8,7 +8,7 @@ const Scent = ({ data }) => (
       style={styles.image}
       resizeMode={'cover'}
       source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }}
-    />
+    /> 
     <Text style={styles.title}>
       {data.name}
     </Text>
