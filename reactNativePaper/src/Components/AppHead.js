@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import Icon from 'react-native-vector-icons';
 
 const AppbarHead = () => {    
     const _drawerMenu = () => console.log('menu');
