@@ -1,21 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, Dimensions } from 'react-native';
+import { SafeAreaView, FlatList, StyleSheet } from 'react-native';
 
 import CardCustom from './Components/Card';
 import AppbarHead from './Components/AppHead';
-
-const Scent = ({ data }) => (
-  <View style={styles.item}>
-    <Image
-      style={styles.image}
-      resizeMode={'cover'}
-      source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }}
-    />
-    <Text style={styles.title}>
-      {data.name}
-    </Text>
-  </View>
-);
 
 const App = () => {
 
@@ -49,7 +36,6 @@ const App = () => {
   );
 }
 
-const win = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,    
