@@ -1,8 +1,10 @@
 import React from 'react';
+import { View, TouchableOpacity } from 'react-native';
 import { Appbar } from 'react-native-paper';
+import Icon from 'react-native-vector-icons';
 
 const AppbarHead = () => {    
-    const _drawerMenu = () => console.log('Open Menu');
+    const _drawerMenu = () => console.log('menu');
     const _handleSearch = () => console.log('Searching');  
 
     return (
@@ -10,7 +12,7 @@ const AppbarHead = () => {
             <Appbar.Action 
                 icon="grain"
                 onPress={_drawerMenu} 
-            />
+            />  
             <Appbar.Content title="My Scent" subtitle="Subtitle" />
             <Appbar.Action 
                 icon="magnify"
