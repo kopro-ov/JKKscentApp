@@ -1,0 +1,77 @@
+{
+  "name": "reactNativePaper",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": ".",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "lint": "eslint .",
+    "web": "webpack-dev-server --open",
+    "devtools": "react-devtools"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^18.2.1",
+    "react": "16.13.1",
+    "react-art": "16.13.1",
+    "react-dev-utils": "^11.0.4",
+    "react-dom": "16.13.1",
+    "react-native": "0.63.0",
+    "react-native-paper": "^4.7.2",
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-web": "^0.14.8",
+    "react-redux": "^7.2.2",
+    "react-scripts": "^4.0.3",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-flow": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@babel/runtime": "^7.13.10",
+    "@jest/source-map": "^24.9.0",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "8.1.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "file-loader": "^6.2.0",
+    "metro-react-native-babel-preset": "^0.65.2",
+    "prettier": "^2.2.1",
+    "react-app-rewired": "^2.1.8",
+    "react-test-renderer": "16.13.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "useTabs": false,
+    "tabWidth": 2,
+    "bracketSpacing": true
+  }
+}
