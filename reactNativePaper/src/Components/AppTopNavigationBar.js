@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
 import { Appbar } from 'react-native-paper';
 
-const AppbarHead = () => {    
+const AppTopNavigationBar = ({ navigation }) => {    
     const _drawerMenu = () => console.log('menu');
     const _handleSearch = () => console.log('Searching');  
 
@@ -10,7 +9,7 @@ const AppbarHead = () => {
         <Appbar.Header>
             <Appbar.Action 
                 icon="grain"
-                onPress={_drawerMenu} 
+                onPress={() => navigation.navigate('Feed')}
             />  
             <Appbar.Content title="My Scent" subtitle="Subtitle" />
             <Appbar.Action 
@@ -21,4 +20,4 @@ const AppbarHead = () => {
     );    
 };
 
-export default AppbarHead;
+export default AppTopNavigationBar;

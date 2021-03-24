@@ -1,58 +1,54 @@
-import React, {useState, useEffect} from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, Dimensions } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
-import CardCustom from '../Components/Card';
+import Feed from '../Components/Feed';
 
-const Home = () => {
-    const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
-  
-    useEffect(() => {
-      fetch('http://192.168.0.167:1202/scent')
-        .then((response) => response.json())
-        .then((json) => { setData(json) })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-    }, []);
-  
-    const renderItem = ({ item }) => (
-      //<Scent data={item} />
-      <CardCustom data={item} />
-    );
-  
-    return (
-      <>
-        <SafeAreaView style={styles.container}>
-          <FlatList
-            data={data}
-            renderItem={renderItem}
-            keyExtractor={(item, index) => index.toString()}
-          />
-        </SafeAreaView>
-      </>    
-    );
+const Tab = createMaterialTopTabNavigator();
+
+const HyangOn = () => {
+  return (
+      <View>
+          <Text>향온</Text>
+      </View>
+  );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,    
-    },
-    item: {
-        backgroundColor: '#f9c2ff',
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
-    },
-    title: {
-        fontSize: 12,
-    },
-    image: {
-        flex: 1,
-        alignSelf: 'stretch',
-        width: '100%',
-        height: 200,
-    }  
-});
+const Event = () => {
+  return (
+      <View>
+          <Text>이벤트</Text>
+      </View>
+  );
+};
+
+const Home = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName="Feed"
+      tabBarOptions={{
+        activeTintColor: '#e91e63',
+        labelStyle: { fontSize: 12 },
+        style: { backgroundColor: 'powderblue' },
+      }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        options={{ tabBarLabel: 'NOW' }}
+      />
+      <Tab.Screen
+        name="hyangOn"
+        component={HyangOn}
+        options={{ tabBarLabel: '향ON' }}
+      />
+      <Tab.Screen
+        name="Event"
+        component={Event}
+        options={{ tabBarLabel: '이벤트' }}
+      />      
+    </Tab.Navigator>
+  );
+};
+
 export default Home;
-
-
