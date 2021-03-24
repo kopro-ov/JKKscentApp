@@ -16,6 +16,8 @@ target 'reactNativePaper' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'RNDateTimePicker', :path => '../node_modules/@react-native-community/datetimepicker'
+
   target 'reactNativePaperTests' do
     inherit! :complete
     # Pods for testing
