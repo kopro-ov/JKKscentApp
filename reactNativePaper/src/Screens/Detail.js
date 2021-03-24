@@ -4,29 +4,51 @@ import { Card, Title, Paragraph } from 'react-native-paper';
 
 const Detail = ({ route }) => {
 
-  const [isLoading, setLoading] = useState(true);
+  const item = route.params.item;
+
   const [data, setData] = useState([]);
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
-    fetch('http://192.168.0.167:1202/scent/'+route.params.id)
-      .then((response) => response.json())
-      .then((json) => { setData(json) })
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+    
+    const fetchScent = async () => {
+      setIsError(false);
+      setIsLoading(true);        
+      try {    
+        fetch('http://192.168.0.167:1202/scent/'+item.id)
+          .then((response) => response.json())
+          .then((json) => { setData(json) })
+          .catch((error) => console.error(error))
+      } catch {
+        setIsError(true);
+      }      
+      setIsLoading(false);
+    }
+    
+    fetchScent();
   }, []);
 
   return (        
-    <Card>
-        <Card.Content>
+    <>
+      {isError && <Text>에러가 발생했습니다.</Text>}
+      {isLoading ? (
+        <ActivityIndicator animating={true} color={Colors.red800} />
+      ) : (      
+        <Card>
+          <Card.Content>
             <Title>{data.name}</Title>
-            <Card.Cover source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }} />
+            <Card.Cover source={{ uri: 'http://192.168.0.167:1202/' + item.thumbnailFilename }} />
             <View>
-                <Paragraph>{data.categories}</Paragraph>
-                <Paragraph >{data.regDt}</Paragraph>
-            </View>                
+                <Paragraph>{item.categories}</Paragraph>
+            </View>         
             <Paragraph>Card content</Paragraph>
-        </Card.Content>        
-    </Card>        
+          </Card.Content>        
+        </Card>        
+      )}
+
+    </>
   );
 };
 

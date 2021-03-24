@@ -4,33 +4,49 @@ import { SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import CardCustom from './Card';
 
 const Feed = () => {
-    const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
-  
-    useEffect(() => {
-      fetch('http://192.168.0.167:1202/scent')
+  const [data, setData] = useState([]);
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+
+    const fetchScents = async () => {
+      setIsError(false);
+      setIsLoading(true);        
+      try {
+        fetch('http://192.168.0.167:1202/scent')
         .then((response) => response.json())
         .then((json) => { setData(json) })
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-    }, []);
-  
-    const renderItem = ({ item }) => (
-      //<Scent data={item} />
-      <CardCustom data={item} />
-    );
-  
-    return (
-      <>
-        <SafeAreaView style={styles.container}>
+        .catch((error) => console.error(error))    
+      } catch (error) {
+        setIsError(true);
+      }
+      setIsLoading(false);
+    }
+
+    fetchScents();
+  }, []);
+
+  const renderItem = ({ item }) => (
+    <CardCustom data={item} />
+  );
+
+  return (
+    <>
+      <SafeAreaView style={styles.container}>
+        {isError && <Text>에러가 발생했습니다.</Text>}
+        {isLoading ? (
+          <ActivityIndicator animating={true} color={Colors.red800} />
+        ) : (
           <FlatList
             data={data}
             renderItem={renderItem}
             keyExtractor={(item, index) => index.toString()}
           />
-        </SafeAreaView>
-      </>    
-    );
+        )}
+      </SafeAreaView>
+    </>    
+  );
 };
 
 const styles = StyleSheet.create({

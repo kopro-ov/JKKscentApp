@@ -16,7 +16,7 @@ const CardCustom = ({ data }) => {
             </Card.Content>
             <Card.Cover source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }} />
             <Card.Actions>
-                <Button onPress={() => RootNavigation.navigate('Detail', { id: data.id })}>More</Button>
+                <Button onPress={() => RootNavigation.navigate('Detail', { item: data })}>More</Button>
             </Card.Actions>
         </Card>        
     );

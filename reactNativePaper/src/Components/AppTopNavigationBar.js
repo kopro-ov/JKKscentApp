@@ -2,6 +2,7 @@ import React from 'react';
 import { Appbar } from 'react-native-paper';
 
 const AppTopNavigationBar = ({ navigation }) => {    
+
     const _drawerMenu = () => console.log('menu');
     const _handleSearch = () => console.log('Searching');  
 
@@ -11,7 +12,7 @@ const AppTopNavigationBar = ({ navigation }) => {
                 icon="grain"
                 onPress={() => navigation.navigate('Feed')}
             />  
-            <Appbar.Content title="My Scent" subtitle="Subtitle" />
+            <Appbar.Content title="My Scent" />
             <Appbar.Action 
                 icon="magnify"
                 onPress={_handleSearch} 

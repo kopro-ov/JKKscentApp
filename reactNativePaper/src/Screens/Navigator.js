@@ -19,11 +19,11 @@ const Navigator = () =>  {
       ref={navigationRef}
     >
       <Stack.Navigator
-        initialRouteName="Main"
+        initialRouteName="Root"
         screenOptions={{
           header: AppTopNavigationBar,
         }}>
-        <Stack.Screen name="Main" component={AppBottomNavigationBar} />
+        <Stack.Screen name="Root" component={AppBottomNavigationBar} />
         <Stack.Screen name="Detail" component={Detail} />
       </Stack.Navigator>
     </NavigationContainer>    

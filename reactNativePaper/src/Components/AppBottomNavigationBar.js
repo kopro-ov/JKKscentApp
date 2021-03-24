@@ -11,6 +11,7 @@ import Mypage from '../Screens/Mypage';
 const Tab = createMaterialBottomTabNavigator();
 
 const BottomNavi = () =>  {
+  
   return (      
     <Tab.Navigator
       initialRouteName="Feed"
@@ -48,7 +49,7 @@ const BottomNavi = () =>  {
         }}
       />
       <Tab.Screen
-        name="shopping"
+        name="Shopping"
         component={Shop}
         options={{
           tabBarLabel: '쇼핑',
