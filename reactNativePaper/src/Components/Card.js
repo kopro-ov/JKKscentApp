@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { View, Image, StyleSheet, ScrollView } from 'react-native';
-import { Avatar, Button, Card, Title, Dialog, Paragraph } from 'react-native-paper';
-
-import DialogCustom from './Dialog';
+import { Button, Card, Title, Paragraph } from 'react-native-paper';
+import * as RootNavigation from '../common/RootNavigation';
 
 const CardCustom = ({ data }) => {
-
-    const detailMore = () => (
-        <DialogCustom />
-    );
 
     return (        
         <Card>
@@ -21,7 +16,7 @@ const CardCustom = ({ data }) => {
             </Card.Content>
             <Card.Cover source={{ uri: 'http://192.168.0.167:1202/' + data.thumbnailFilename }} />
             <Card.Actions>
-                <Button onPress={ () => detailMore() }>More</Button>
+                <Button onPress={() => RootNavigation.navigate('Detail', { item: data })}>More</Button>
             </Card.Actions>
         </Card>        
     );

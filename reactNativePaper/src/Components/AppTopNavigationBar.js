@@ -1,17 +1,18 @@
 import React from 'react';
 import { Appbar } from 'react-native-paper';
 
-const AppbarHead = () => {    
-    const _drawerMenu = () => console.log('Open Menu');
+const AppTopNavigationBar = ({ navigation }) => {    
+
+    const _drawerMenu = () => console.log('menu');
     const _handleSearch = () => console.log('Searching');  
 
     return (
         <Appbar.Header>
             <Appbar.Action 
                 icon="grain"
-                onPress={_drawerMenu} 
-            />
-            <Appbar.Content title="My Scent" subtitle="Subtitle" />
+                onPress={() => navigation.navigate('Feed')}
+            />  
+            <Appbar.Content title="My Scent" />
             <Appbar.Action 
                 icon="magnify"
                 onPress={_handleSearch} 
@@ -20,4 +21,4 @@ const AppbarHead = () => {
     );    
 };
 
-export default AppbarHead;
+export default AppTopNavigationBar;
