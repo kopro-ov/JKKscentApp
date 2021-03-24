@@ -12,6 +12,12 @@ target 'rnwClient' do
     :hermes_enabled => false
   )
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
   target 'rnwClientTests' do
     inherit! :complete
     # Pods for testing
