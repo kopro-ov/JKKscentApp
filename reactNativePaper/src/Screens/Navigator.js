@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import AppbarHead from '../Components/AppHead';
+import GalioNavbar from '../Components/GalioNavbar';
+
 
 import Home from './Home';
 import Search from './Search';
@@ -16,7 +18,7 @@ const Tab = createBottomTabNavigator();
 const Navigator = () =>  {
   return (        
     <NavigationContainer>
-      <AppbarHead />
+      <GalioNavbar />
       <Tab.Navigator
         initialRouteName="Home"
         activeColor="#e91e63"

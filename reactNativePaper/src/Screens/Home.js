@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, Image, Dimensions } from 'react-native';
 
 import CardCustom from '../Components/Card';
+import GalioCard from '../Components/GalioCard';
 
 const Home = () => {
     const [isLoading, setLoading] = useState(true);
@@ -17,7 +18,8 @@ const Home = () => {
   
     const renderItem = ({ item }) => (
       //<Scent data={item} />
-      <CardCustom data={item} />
+      <GalioCard data={item} />
+      //<CardCustom data={item} />
     );
   
     return (

@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { StyleSheet, StatusBar, Text, View } from 'react-native';
+import moment from 'moment';
 
 import BottomSheet from '../Components/BottomSheet';
 import DatePicker from "../Components/DatePicker";
+import { TextInput } from 'react-native-paper';
 
 const Trend = () => {
-    const [date, setDate] = useState(new Date().toString());
+    const nowTime = moment().format('YYYY-MM-DD hh:mm:ss');
+    const [ date, setDate ] = useState(nowTime);
+
+    const [ newInput, setNewInput ] = useState('');
+
+    const _addNewInput = () => {
+        alert(`Add : ${newInput}`);
+        setNewInput('');
+    };
+
+    const _handleTextChange = text => {
+        setNewInput(text);
+    }
 
 
     return (
         <View style={styles.view}>
+            <StatusBar barStyle="dark-content" />
             <TextInput
+                type="flat"
                 label="Current Date"
                 value={date}
                 disabled={true}

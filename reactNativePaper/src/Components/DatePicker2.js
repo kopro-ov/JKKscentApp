@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { View, StyleSheet, SafeAreaView } from 'react-native';
 import DatePicker from 'react-native-date-picker';
-import { Button } from 'react-native-paper';
 
 const DatePicker2 = () => {
     const [date, setDate] = useState(new Date())
@@ -16,7 +15,6 @@ const DatePicker2 = () => {
                     androidVariant='nativeAndroid'
                 />            
             </View>
-            <Button title="Select"/>
         </SafeAreaView>        
     );
 }
