@@ -140,6 +140,7 @@ const styles = theme =>
     imageBlock: {
       borderWidth: 0,
       overflow: 'hidden',
+      padding: theme.SIZES.BASE / 2,
     },
     image: {
       width: 'auto',
