@@ -2,6 +2,8 @@ import React from 'react'
 import { Platform } from 'react-native'
 import Styled from 'styled-components/native'
 
+import SubTitle from './components/SubTitle/SubTitle'
+
 const Container = Styled.View`
   display: flex;
   justify-content: center;
@@ -18,10 +20,10 @@ const Title = Styled.Text`
 `
 
 export function App() {
-  console.log(Platform.OS)
   return (
     <Container>
       <Title>REACT NATIVE WEB</Title>
+      <SubTitle />
     </Container>
   )
 }
