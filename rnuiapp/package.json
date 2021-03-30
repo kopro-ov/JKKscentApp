@@ -1,0 +1,24 @@
+{
+  "name": "rnuiapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": [
+      "**/mobile",
+      "**/mobile/**"
+    ]    
+  },
+  "scripts": {
+    "web": "yarn workspace web dev",
+    "android": "yarn workspace mobile android",
+    "ios": "yarn workspace mobile ios",
+    "common": "yarn workspace @mono/common",
+    "clean": "yarn lerna clean"
+  }    
+}

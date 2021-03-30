@@ -1,0 +1,11 @@
+{
+  "name": "@jkk/common",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.64.0",
+    "styled-components": "^5.2.1"
+  }
+}
