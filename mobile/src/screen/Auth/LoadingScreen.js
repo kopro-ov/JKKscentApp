@@ -8,7 +8,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Transitioning, Transition} from 'react-native-reanimated';
 
 //Redux
-import {updateUser} from '../../actions/userActions';
+import {updateUser} from '../../redux/actions/userActions';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 
@@ -69,7 +69,7 @@ function LoadingScreen() {
       //Get User data
       let data = await AsyncStorage.getItem('data');
 
-      console.log(data);
+      console.log('data', data);
       //Update redux state
       dispatch(updateUser(data));
     }

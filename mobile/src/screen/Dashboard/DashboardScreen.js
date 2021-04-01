@@ -15,7 +15,7 @@ import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-community/async-storage';
 
 //Redux
-import {updateUser} from '../../actions/userActions';
+import {updateUser} from '../../redux/actions/userActions';
 import {useDispatch} from 'react-redux';
 
 function DashboardScreen() {
