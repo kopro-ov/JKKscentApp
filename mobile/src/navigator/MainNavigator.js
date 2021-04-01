@@ -7,7 +7,6 @@ import Community from '../screens/Community/Community';
 import TrendChart from '../screens/TrendChart/TrendChart';
 import Search from '../screens/Search/Search';
 import Mypage from '../screens/Mypage/Mypage';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 
 const MainTab = createBottomTabNavigator();
 
