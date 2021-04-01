@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {StyleSheet, View} from 'react-native';
+import { navigationRef } from '../../navigator/RootNavigation';
 
 //ThirdParty
 import CustomSplashScreen from 'react-native-splash-screen';
@@ -87,7 +88,9 @@ function LoadingScreen() {
   ref && ref.current && ref.current.animateNextTransition();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={navigationRef}
+    >
       <Transitioning.View ref={ref} transition={TRANSITION} style={styles.transitionContainer}>
         {loginStatus === 1 && <MainNavigator />}
         {loginStatus === 0 && <AuthNavigator />}
