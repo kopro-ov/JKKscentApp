@@ -33,7 +33,7 @@ function MainNavigator() {
         options={{
           tabBarLabel: '트렌드',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            <MaterialCommunityIcons name="reddit" color={color} size={26} />
           ),
         }}
       />     
@@ -43,7 +43,7 @@ function MainNavigator() {
         options={{
           tabBarLabel: '커뮤니티',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            <MaterialCommunityIcons name="account-group" color={color} size={26} />
           ),
         }}
       />            
@@ -63,7 +63,7 @@ function MainNavigator() {
         options={{
           tabBarLabel: '마이페이지',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="shopping" color={color} size={26} />
+            <MaterialCommunityIcons name="account-circle" color={color} size={26} />
           ),
         }}
       />     
