@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 //Dashboard
 import DashboardScreen from '../screens/Dashboard/DashboardScreen';
-// import ProfileScreen from '../screens/Profile/ProfileScreen';
+import ProfileScreen from '../screens/Profile/ProfileScreen';
 
 const MainStack = createStackNavigator();
 
@@ -13,7 +13,7 @@ function MainNavigator() {
   return (
     <MainStack.Navigator initialRouteName="MainDrawer">
       <MainStack.Screen name="Dashboard" component={DashboardScreen} options={{headerShown: false}} />
-      {/* <MainStack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}} /> */}
+      <MainStack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}} />
     </MainStack.Navigator>
   );
 }
