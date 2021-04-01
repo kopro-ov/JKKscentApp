@@ -1,20 +1,73 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-//Dashboard
-import DashboardScreen from '../screens/Dashboard/Dashboard';
-import ProfileScreen from '../screens/Profile/ProfileScreen';
+import Dashboard from '../screens/Dashboard/Dashboard';
+import Community from '../screens/Community/Community';
+import TrendChart from '../screens/TrendChart/TrendChart';
+import Search from '../screens/Search/Search';
+import Mypage from '../screens/Mypage/Mypage';
 
-const MainStack = createStackNavigator();
+const MainTab = createBottomTabNavigator();
 
 function MainNavigator() {
   return (
-    <MainStack.Navigator initialRouteName="MainDrawer">
-      <MainStack.Screen name="Dashboard" component={DashboardScreen} options={{headerShown: false}} />
-      <MainStack.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}} />
-    </MainStack.Navigator>
+    <MainTab.Navigator
+      initialRouteName="Feed"
+      activeColor="#f0edf6"
+      inactiveColor="#3e2465"    
+    >
+      <MainTab.Screen
+        name="dashboard"
+        component={Dashboard}
+        options={{
+          tabBarLabel: '홈',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <MainTab.Screen
+        name="trendChart"
+        component={TrendChart}
+        options={{
+          tabBarLabel: '트렌드',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+          ),
+        }}
+      />     
+      <MainTab.Screen
+        name="community"
+        component={Community}
+        options={{
+          tabBarLabel: '커뮤니티',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+          ),
+        }}
+      />            
+      <MainTab.Screen
+        name="search"
+        component={Search}
+        options={{
+          tabBarLabel: '검색',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+          ),
+        }}
+      />
+      <MainTab.Screen
+        name="mypage"
+        component={Mypage}
+        options={{
+          tabBarLabel: '마이페이지',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="shopping" color={color} size={26} />
+          ),
+        }}
+      />     
+    </MainTab.Navigator> 
   );
 }
 
