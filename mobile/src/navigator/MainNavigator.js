@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 //Dashboard
-import DashboardScreen from '../screens/Dashboard/DashboardScreen';
+import DashboardScreen from '../screens/Dashboard/Dashboard';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 
 const MainStack = createStackNavigator();
