@@ -1,21 +1,20 @@
 
 import React from 'react';
 import {View, Text, Button} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 
-function Home() {
+function Home({ navigation }) {
   
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   return (
     <View>
       <Text>Home</Text> 
       <Button
-          title="FragranceFinder"
-          onPress={() => {
-            navigation.navigate('FragranceFinder');
-          }}
-        />
+        title="FragranceFinder"
+        onPress={() => {
+          navigation.navigate('FragranceFinder');
+        }}
+      />
     </View>
   );
 }
