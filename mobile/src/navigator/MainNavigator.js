@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Dashboard from '../screens/Dashboard/Dashboard';
+import Dashboard from '~/screens/Dashboard/Dashboard';
 import Community from '../screens/Community/Community';
 import TrendChart from '../screens/TrendChart/TrendChart';
 import Search from '../screens/Search/Search';
