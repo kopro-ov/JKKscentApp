@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {TextField} from 'react-native-material-textfield';
 
 //Redux
-import {updateUser} from '../../redux/actions/userActions';
+import {updateUser} from '@modules/actions/userActions';
 import {useDispatch} from 'react-redux';
 
 function SignInScreen() {

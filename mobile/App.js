@@ -4,7 +4,7 @@ import {View, Text, TextInput, Button, StatusBar} from 'react-native';
 import {Provider} from 'react-redux';
 import {store} from './src/store/index';
 
-import LoadingScreen from './src/screens/Auth/LoadingScreen';
+import LoadingScreen from '@screens/Auth/LoadingScreen';
 
 StatusBar.setBarStyle('light-content', true);
 

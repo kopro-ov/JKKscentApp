@@ -12,7 +12,12 @@
     "target": "esnext",
     "baseUrl": "./src",
     "paths": {
-      "~/*": ["*"]
+      "~/*": ["./*"],
+      "images/*": ["assets/images/*"],
+      "@components/*": ["components/*"],
+      "@modules/*": ["modules/*"],
+      "@screens/*": ["screens/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "exclude": [

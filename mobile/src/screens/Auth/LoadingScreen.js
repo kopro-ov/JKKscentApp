@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {StyleSheet, View} from 'react-native';
-import { navigationRef } from '../../navigator/RootNavigation';
+import { navigationRef } from '~/navigator/RootNavigation';
 
 //ThirdParty
 import CustomSplashScreen from 'react-native-splash-screen';
@@ -9,13 +9,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Transitioning, Transition} from 'react-native-reanimated';
 
 //Redux
-import {updateUser} from '../../redux/actions/userActions';
+import {updateUser} from '@modules/actions/userActions';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 
 //Custom Modules
-import AuthNavigator from '../../navigator/AuthNavigator';
-import MainNavigator from '../..//navigator/MainNavigator';
+import AuthNavigator from '~/navigator/AuthNavigator';
+import MainNavigator from '~/navigator/MainNavigator';
 
 const TRANSITION_FADE = (
   <Transition.Sequence>
