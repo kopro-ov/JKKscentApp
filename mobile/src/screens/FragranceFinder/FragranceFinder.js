@@ -7,6 +7,7 @@ const Stack = createStackNavigator();
 
 function FragranceFinderSurvey({ route, navigation }) {
   /* 2. Get the param */
+  /* https://reactnavigation.org/docs/6.x/params */
   const { itemId, otherParam } = route.params;
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
