@@ -2,6 +2,7 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 
 const Stack = createStackNavigator();
 
@@ -11,6 +12,17 @@ function FragranceFinderSurvey({ route, navigation }) {
   const { itemId, otherParam } = route.params;
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <SkeletonPlaceholder>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View style={{ width: 60, height: 60, borderRadius: 50 }} />
+          <View style={{ marginLeft: 20 }}>
+            <View style={{ width: 120, height: 20, borderRadius: 4 }} />
+            <View
+              style={{ marginTop: 6, width: 80, height: 20, borderRadius: 4 }}
+            />
+          </View>
+        </View>
+      </SkeletonPlaceholder>      
       <Text>Details Screen</Text>
       <Text>itemId: {JSON.stringify(itemId)}</Text>
       <Text>otherParam: {JSON.stringify(otherParam)}</Text>
