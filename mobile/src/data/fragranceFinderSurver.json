@@ -1,0 +1,66 @@
+[
+  {
+    "itemId": 1,
+    "title": "어떤 향기를\n찾아드릴까요???",
+    "nextButtons": [
+      {
+        "itemId": 2,
+        "text": "내가 쓰는 향기"
+      },
+      {
+        "itemId": 3,
+        "text": "선물하고 싶은 향기"
+      }        
+    ]
+  },
+  {
+    "itemId": 2,
+    "title": "어떤 종류의 향기를 사용\n하고 싶으세요?"
+  },
+  {
+    "itemId": 3,
+    "title": "어떤 종류의 향기를 선물\n하고 싶으세요?",
+    "nextButtons": [
+      {
+        "itemId": 4,
+        "text": "향기"
+      },
+      {
+        "itemId": 4,
+        "text": "홈프레그런스"
+      }        
+    ]    
+  },
+  {
+    "itemId": 4,
+    "title": "선물 하고자 하는 분의 성별은 어떻게 되나요?",
+    "nextButtons": [
+      {
+        "itemId": 5,
+        "text": "남성"
+      },
+      {
+        "itemId": 5,
+        "text": "여성"
+      }        
+    ]    
+  },
+  {
+    "itemId": 5,
+    "title": "연령대는 어떻게 되나요?",
+    "nextButtons": [
+      {
+        "itemId": "",
+        "text": "10대"
+      },
+      {
+        "itemId": "",
+        "text": "20대"
+      },
+      {
+        "itemId": "",
+        "text": "20대"
+      }
+    ]    
+  }    
+]
