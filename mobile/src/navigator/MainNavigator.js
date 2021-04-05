@@ -15,7 +15,7 @@ function MainNavigator() {
   return (
     <>
       <MainTab.Navigator
-        initialRouteName="Feed"
+        initialRouteName="dashboard"
         activeColor="#f0edf6"
         inactiveColor="#3e2465"    
       >
