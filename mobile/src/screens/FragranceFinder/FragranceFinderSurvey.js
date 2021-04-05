@@ -2,16 +2,10 @@
 import React from 'react';
 import {View, Text, Button, TouchableOpacity, StyleSheet} from 'react-native';
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
+import { useNavigation } from '@react-navigation/native';
 
-
-function getSurverData(itemId="1") {
-  const data = require('~/data/fragranceFinderSurver.json');
-  const el = data.find(el => el.itemId === itemId);
-  return el;
-}
-
-function FragranceFinderSurveyButton(props) {
-  console.log(props);
+function SurveyButton(props) {
+  
   return (
     <TouchableOpacity
       style={styles.button}
@@ -22,9 +16,47 @@ function FragranceFinderSurveyButton(props) {
   );
 }
 
+function SurveyButtonList(props) {
+  const navigation = useNavigation();  
+  const nextButtons = props.nextButtons;  
+
+  return (
+    nextButtons.map((item, index) => (
+      <SurveyButton
+        text={item.text}
+        key={index}
+        onPress={() => {
+          navigation.push('FragranceFinderSurvey', {
+            itemId: item.itemId
+          });
+        }}
+      />
+    ))
+  );
+}
+function SurveyNext(props) {
+  const navigation = useNavigation();  
+  const data = props.surverData;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{data.title}</Text>
+      {data.nextButtons ? (
+          <SurveyButtonList 
+            nextButtons={data.nextButtons}
+          />
+        ) : (
+          <View>
+            <Text>다음 버튼이 존재하지 않습니다.</Text>
+            <Button title="뒤로 가기" onPress={() => navigation.goBack()} />
+          </View>
+        )}
+    </View>
+  );
+}
+
 function FragranceFinderSurvey({ route, navigation }) {
-  const { itemId } = route.params;  
-  surverData = getSurverData(itemId);
+  const { itemId } = route.params;
+  const surverData = require('~/data/fragranceFinderSurver.json').find(el => el.itemId === itemId);
   
   return (    
     <>    
@@ -32,22 +64,9 @@ function FragranceFinderSurvey({ route, navigation }) {
         <View style={{ width: "100%", height: 250,  marginBottom: 10 }} />
       </SkeletonPlaceholder>
       {surverData ? (
-        <View style={styles.container}>
-          <Text style={styles.title}>{surverData.title}</Text>      
-          <View>            
-            {surverData.nextButtons.map((item, index) => (
-              <FragranceFinderSurveyButton
-                text={item.text}
-                key={index}
-                onPress={() => {
-                  navigation.navigate('FragranceFinderSurvey', {
-                    itemId: item.itemId
-                  });
-                }}
-              />
-            ))}          
-          </View>
-        </View>         
+        <SurveyNext 
+          surverData={surverData}
+        />        
         ) : (
         <View style={styles.container}>
           <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />

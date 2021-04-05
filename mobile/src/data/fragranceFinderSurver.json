@@ -9,7 +9,7 @@
       },
       {
         "itemId": 3,
-        "text": "선물하고 싶은 향기"
+        "text": "선물하고 싶은 향기~"
       }        
     ]
   },
@@ -48,6 +48,7 @@
   {
     "itemId": 5,
     "title": "연령대는 어떻게 되나요?",
+    "finish": true,
     "nextButtons": [
       {
         "itemId": "",
@@ -59,7 +60,7 @@
       },
       {
         "itemId": "",
-        "text": "20대"
+        "text": "30대"
       }
     ]    
   }    
