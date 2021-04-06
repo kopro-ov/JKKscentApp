@@ -1,21 +1,26 @@
 
 import React from 'react';
-import { SafeAreaView, Text, Button} from 'react-native';
+import { SafeAreaView, View, Text, Button} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import Main1 from './Main1';
 
 function Home({ navigation }) {
   return (
-    <SafeAreaView>
-      <Text>Home</Text> 
-      <Button
-        title="FragranceFinder"
-        onPress={() => {
-          navigation.navigate('FragranceFinder');
-        }}
-      />
-      <Main1 />
-    </SafeAreaView>
+    <>
+      <View>
+        <Text>Home</Text> 
+        <Button
+          title="FragranceFinder"
+          onPress={() => {
+            navigation.navigate('FragranceFinder');
+          }}
+        />
+      </View>
+      <ScrollView>
+        <Main1 />
+      </ScrollView>
+    </>
   );
 }
 

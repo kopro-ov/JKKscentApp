@@ -3,6 +3,10 @@ import { SafeAreaView, ScrollView, View, Alert, StyleSheet } from 'react-native'
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { Chip, Spacings, Typography, Card, Colors, Button, Text } from 'react-native-ui-lib';
 
+const goDetail = ({navigation}) => {
+    console.log('click Product');
+    return navigation.navigate('Detail');
+}
 
 const MyCent1 = ({}) => {
     return (
@@ -50,10 +54,10 @@ const MyCent1 = ({}) => {
             <SkeletonPlaceholder>
                 <SkeletonPlaceholder.Item flexDirection="row" alignContent="center" justifyContent="center">
                     <SkeletonPlaceholder.Item>
-                        <SkeletonPlaceholder.Item width={175} height={175} borderRadius={6} marginRight={10}/>
+                        <SkeletonPlaceholder.Item width={190} height={175} borderRadius={6} marginRight={10}/>
                     </SkeletonPlaceholder.Item>
                     <SkeletonPlaceholder.Item>
-                        <SkeletonPlaceholder.Item width={175} height={175} borderRadius={6} />
+                        <SkeletonPlaceholder.Item width={190} height={175} borderRadius={6} />
                     </SkeletonPlaceholder.Item>
                 </SkeletonPlaceholder.Item>
             </SkeletonPlaceholder>
@@ -108,10 +112,10 @@ const MyCent1 = ({}) => {
             <SkeletonPlaceholder>
                 <SkeletonPlaceholder.Item flexDirection="row" alignContent="center" justifyContent="center">
                     <SkeletonPlaceholder.Item>
-                        <SkeletonPlaceholder.Item width={185} height={175} borderRadius={6} marginRight={10}/>
+                        <SkeletonPlaceholder.Item width={190} height={175} borderRadius={6} marginRight={10}/>
                     </SkeletonPlaceholder.Item>
                     <SkeletonPlaceholder.Item>
-                        <SkeletonPlaceholder.Item width={185} height={175} borderRadius={6} />
+                        <SkeletonPlaceholder.Item width={190} height={175} borderRadius={6} />
                     </SkeletonPlaceholder.Item>
                 </SkeletonPlaceholder.Item>
             </SkeletonPlaceholder>

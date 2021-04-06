@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createStackNavigator, HeaderStyleInterpolators  } from '@react-navigation/stack';
 import HomeBottomTabs from '~/navigator/HomeBottomTabNaigator';
 import FragranceFinder from '@screens/FragranceFinder/FragranceFinder';
+import Detail from '~/screens/Home/Detail';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,12 @@ function MainNavigator() {
         options={{
           gestureEnabled: false,
         }}        
+      />
+      <Stack.Screen
+        name="Detail" component={Detail}
+        options={{
+          title : 'Product Detail'
+        }}
       />
     </Stack.Navigator>
   );

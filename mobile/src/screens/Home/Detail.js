@@ -94,8 +94,8 @@ const Detail = ({}) => {
 };
 
 
-MyCent2.propTypes = {};
-MyCent2.defaultProps = {};
+Detail.propTypes = {};
+Detail.defaultProps = {};
 
 
 const styles = StyleSheet.create({
