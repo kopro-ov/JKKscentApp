@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createStackNavigator, HeaderStyleInterpolators  } from '@react-navigation/stack';
 import HomeBottomTabs from '~/navigator/HomeBottomTabNaigator';
 import FragranceFinder from '@screens/FragranceFinder/FragranceFinder';
-import Detail from '~/screens/Home/Detail';
+import Detail from '@screens/Home/Detail';
 
 const Stack = createStackNavigator();
 

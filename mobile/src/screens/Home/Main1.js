@@ -2,13 +2,10 @@ import React from 'react';
 import { SafeAreaView, ScrollView, View, Alert, StyleSheet } from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { Chip, Spacings, Typography, Card, Colors, Button, Text } from 'react-native-ui-lib';
+import MainNavigator from '~/navigator/MainNavigator';
 
-const goDetail = ({navigation}) => {
-    console.log('click Product');
-    return navigation.navigate('Detail');
-}
 
-const MyCent1 = ({}) => {
+const MyCent1 = () => {
     return (
         <ScrollView style={styles.view}>
             <Text text50BL green10 style={{marginTop : Spacings.s3, marginLeft: Spacings.s2}}>
@@ -62,46 +59,65 @@ const MyCent1 = ({}) => {
                 </SkeletonPlaceholder.Item>
             </SkeletonPlaceholder>
             <View style={styles.typoRow}>
-                <Card.Section
-                    content={[
-                        {
-                            text : '샤넬 코코 마드모아젤 오 드 빠르펭 엥땅스', 
-                            text70: true, 
-                            grey10: true
-                        },
-                        {
-                            text :'향 계열 : 플로럴',
-                            text80: true,
-                            grey10: true
-                        },
-                        {
-                            text :'fits : 82%',
-                            text90: true,
-                            yellow20: true
-                        }
-                    ]}
-                    style={{padding: 10, flex: 1}}
-                />
-                <Card.Section
-                    content={[
-                        {
-                            text : '샤넬 가브리엘 팜므 오드퍼퓸', 
-                            text70: true, 
-                            grey10: true
-                        },
-                        {
-                            text :'향 계열 : 플로럴',
-                            text80: true,
-                            grey10: true
-                        },
-                        {
-                            text :'fits : 74%',
-                            text90: true,
-                            yellow20: true
-                        }
-                    ]}
-                    style={{padding: 10, flex: 1}}
-                />
+                <Card style={styles.productName}>
+                    <Card.Section
+                        content={[
+                            {
+                                text : '샤넬 코코 마드모아젤 오 드 빠르펭 엥땅스', 
+                                text70: true, 
+                                grey10: true
+                            },
+                            {
+                                text :'향 계열 : 플로럴',
+                                text80: true,
+                                grey10: true
+                            },
+                            {
+                                text :'fits : 82%',
+                                text90: true,
+                                yellow20: true
+                            }
+                        ]}
+                        style={{padding: 10, flex: 1}}
+                    />
+                    <Button 
+                        label="> Detail" 
+                        onPress={() => console.log('detail go')}
+                        size={Button.sizes.small}
+                        style={styles.detailButton}
+                        color={Colors.green10}
+                    />
+                </Card>
+                
+                <Card style={styles.productName}>
+                    <Card.Section
+                        content={[
+                            {
+                                text : '샤넬 가브리엘 팜므 오드퍼퓸', 
+                                text70: true, 
+                                grey10: true
+                            },
+                            {
+                                text :'향 계열 : 플로럴',
+                                text80: true,
+                                grey10: true
+                            },
+                            {
+                                text :'fits : 74%',
+                                text90: true,
+                                yellow20: true
+                            }
+                        ]}
+                        style={{padding: 10, flex: 1}}
+                    />
+                    <Button 
+                        label="> Detail" 
+                        onPress={() => console.log('detail go')}
+                        size={Button.sizes.small}
+                        style={styles.detailButton}
+                        color={Colors.green10}
+                    />
+                </Card>                
             </View>
 
 
@@ -244,6 +260,18 @@ const styles = StyleSheet.create({
         flex : 0.5,
         flexDirection : 'row',
         marginBottom: Spacings.s4
+    },
+    productName : {
+        width : '50%',
+        backgroundColor : '#ffffff',
+        opacity: 0.8
+    },
+    detailButton : {
+        flex : 0.3,
+        justifyContent : 'flex-end',
+        backgroundColor : 'rgba(255,255,255,0.1)',
+        margin : Spacings.s1,
+        height : 30
     }
 });
 
