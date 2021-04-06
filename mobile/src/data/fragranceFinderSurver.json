@@ -2,6 +2,7 @@
   {
     "itemId": 1,
     "title": "어떤 향기를\n찾아드릴까요???",
+    "finish": false,
     "nextButtons": [
       {
         "itemId": 2,
@@ -9,21 +10,23 @@
       },
       {
         "itemId": 3,
-        "text": "선물하고 싶은 향기~"
+        "text": "선물하고 싶은 향기"
       }        
     ]
   },
   {
     "itemId": 2,
-    "title": "어떤 종류의 향기를 사용\n하고 싶으세요?"
+    "title": "어떤 종류의 향기를 사용\n하고 싶으세요?",
+    "finish": false
   },
   {
     "itemId": 3,
     "title": "어떤 종류의 향기를 선물\n하고 싶으세요?",
+    "finish": false,
     "nextButtons": [
       {
         "itemId": 4,
-        "text": "향기"
+        "text": "향수"
       },
       {
         "itemId": 4,
@@ -34,6 +37,7 @@
   {
     "itemId": 4,
     "title": "선물 하고자 하는 분의 성별은 어떻게 되나요?",
+    "finish": false,
     "nextButtons": [
       {
         "itemId": 5,

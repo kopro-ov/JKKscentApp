@@ -18,17 +18,20 @@ function SurveyButton(props) {
 
 function SurveyButtonList(props) {
   const navigation = useNavigation();  
-  const nextButtons = props.nextButtons;  
-
+  const nextButtons = props.nextButtons; 
+  const finish = props.finish;
+  
   return (
     nextButtons.map((item, index) => (
       <SurveyButton
         text={item.text}
         key={index}
         onPress={() => {
-          navigation.push('FragranceFinderSurvey', {
-            itemId: item.itemId
-          });
+          {
+            finish 
+          ? navigation.navigate('FragranceFinderResult')
+          : navigation.push('FragranceFinderSurvey', {itemId: item.itemId})
+          }
         }}
       />
     ))
@@ -37,12 +40,14 @@ function SurveyButtonList(props) {
 function SurveyNext(props) {
   const navigation = useNavigation();  
   const data = props.surverData;
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{data.title}</Text>
       {data.nextButtons ? (
           <SurveyButtonList 
             nextButtons={data.nextButtons}
+            finish={data.finish}
           />
         ) : (
           <View>

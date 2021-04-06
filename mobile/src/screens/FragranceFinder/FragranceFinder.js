@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import FragranceFinderSurvey from '@screens/FragranceFinder/FragranceFinderSurvey';
+import FragranceFinderSurvey from '@components/pages/FragranceFinderSurvey';
+import FragranceFinderResult from '@components/pages/FragranceFinderResult';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,10 @@ function FragranceFinder() {
           component={FragranceFinderSurvey} 
           initialParams={{ itemId: 1 }}
         />
+        <Stack.Screen
+          name="FragranceFinderResult"
+          component={FragranceFinderResult}
+        />        
       </Stack.Navigator>
     </>
   );
