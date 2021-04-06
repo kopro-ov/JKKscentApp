@@ -1,13 +1,12 @@
 
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import { SafeAreaView, Text, Button} from 'react-native';
+
+import Main1 from './Main1';
 
 function Home({ navigation }) {
-  
-  // const navigation = useNavigation();
-
   return (
-    <View>
+    <SafeAreaView>
       <Text>Home</Text> 
       <Button
         title="FragranceFinder"
@@ -15,7 +14,8 @@ function Home({ navigation }) {
           navigation.navigate('FragranceFinder');
         }}
       />
-    </View>
+      <Main1 />
+    </SafeAreaView>
   );
 }
 
