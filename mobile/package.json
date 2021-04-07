@@ -25,6 +25,7 @@
     "react-native": "0.63.4",
     "react-native-gesture-handler": "1.10.3",
     "react-native-material-textfield": "^0.16.1",
+    "react-native-pure-chart": "0.0.24",
     "react-native-ratings": "7.6.1",
     "react-native-reanimated": "1.13.3",
     "react-native-safe-area-context": "^0.7.3",
