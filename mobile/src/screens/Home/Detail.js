@@ -1,10 +1,12 @@
 import React from 'react';
 import { ScrollView, Alert, StyleSheet } from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-import { Avatar, View, Chip, Spacings, Typography, Card, Colors, Button, RadioGroup, Slider, Text} from 'react-native-ui-lib';
+import { Avatar, View, Chip, Spacings, Typography, Card, Colors, Button, RadioGroup, Text} from 'react-native-ui-lib';
 import { AirbnbRating } from 'react-native-ratings';
 
 import ChartCustom from './Chart';
+import ImageScreen from './Image';
+
 
 const Detail = ({}) => {
     return (
@@ -12,9 +14,7 @@ const Detail = ({}) => {
             <Text text50BL green10 style={{marginTop : Spacings.s3, marginBottom : Spacings.s1, marginLeft: Spacings.s2}}>
                 상품 상세
             </Text>
-            <SkeletonPlaceholder>                
-                <SkeletonPlaceholder.Item width="100%" height={150} />
-            </SkeletonPlaceholder>
+            <ImageScreen />
             <View style={styles.typoRow}>
                 <Text text70 grey10>
                     샤넬 가브리엘 팜므 오드퍼퓸                    
@@ -272,7 +272,7 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop : Spacings.s4,
+        marginTop : Spacings.s2,
         marginBottom: Spacings.s2,
         marginLeft: Spacings.s2
     },

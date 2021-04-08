@@ -6,7 +6,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Main1 from './Main1';
 import Detail from './Detail';
 
-
 function Home({ navigation }) {
   console.log('===> Platform : ', Platform.OS + ' // ' + Platform.Version);
 
@@ -20,8 +19,8 @@ function Home({ navigation }) {
           }}
         />
       </View>
-      <ScrollView>
-        <Detail />
+      <ScrollView>        
+        <Main1 />
       </ScrollView>
     </>
   );

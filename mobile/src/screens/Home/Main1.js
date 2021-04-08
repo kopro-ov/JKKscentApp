@@ -2,12 +2,12 @@ import React from 'react';
 import { SafeAreaView, ScrollView, View, Alert, StyleSheet } from 'react-native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { Chip, Spacings, Typography, Card, Colors, Button, Text } from 'react-native-ui-lib';
-import MainNavigator from '~/navigator/MainNavigator';
 
 
 const MyCent1 = () => {
     return (
         <ScrollView style={styles.view}>
+           
             <Text text50BL green10 style={{marginTop : Spacings.s3, marginLeft: Spacings.s2}}>
                 당신에게 필요한 향기를 찾아드려요.
             </Text>
